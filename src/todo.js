@@ -3,7 +3,7 @@ export default class Todo {
     title;  //string
     description; //string
     dueDate; //string format date
-    priority = "low"; //string, can only be high, medium, low or null, it is low by default
+    priority; //string, can only be high, medium, low or null
 
     /**
      * 
