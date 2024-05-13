@@ -6,6 +6,48 @@
     <title>Todolist</title>
 </head>
 <body>
-    
+    <div class="todo-adder">
+        <div class="form-title">Add todo</div>
+        <form class="todo-form">
+            <div class="todo-form-title">
+                <label for="todo-form-title">Title</label>
+                <input type="text" name="todo-form-title" id="todo-form-title" maxlength="15" required>
+            </div>
+            <div class="todo-form-description">
+                <label for="todo-form-description">Description</label>
+                <textarea name="todo-form-description" id="todo-form-description" required></textarea>
+            </div>
+            <div class="todo-form-due-date">
+                <label for="todo-form-due-date">Due Date</label>
+                <input type="date" id="todo-form-due-date" name="todo-form-due-date" value="2024-11-05" min = "2016-12-29" max="2050-12-29" required>
+            </div>
+            <div class="form-priority">
+                <label>Priority</label>
+                <input type="radio" id="low" name="priority" value="low" required>
+                <label for="low">Low</label>
+                <input type="radio" id="medium" name="priority" value="medium">
+                <label for="medium">Medium</label>
+                <input type="radio" id="high" name="priority" value="high">
+                <label for="high">High</label>
+            </div>
+            <div class="form-category">
+                <label for="projects">Project category</label>
+                <select name="projects" id="projects" required>
+                    <option value="Default" data-index="0">Default</option>
+                </select>
+            </div>
+            <button type="submit" id="todo-add-btn">Add</button>
+        </form>
+    </div>
+    <div class="project-adder">
+        <form class="project-form">
+            <label for="">Add project</label>
+            <div class="input-row">
+                <input type="text" id="project-form-title" maxlength="10" required>
+                <button type="submit" id="project-add-btn">Add</button>
+            </div>
+        </form>
+
+    </div>
 </body>
 </html>
