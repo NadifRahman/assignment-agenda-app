@@ -27,7 +27,7 @@
                     <input type="date" id="todo-form-due-date" name="todo-form-due-date" value="2024-11-05" min = "2016-12-29" max="2050-12-29" required>
                 </div>
                 <div class="form-priority">
-                    <label>Priority</label>
+                    <label for="priority">Priority</label>
                     <div class="radio-option">
                         <input type="radio" id="low" name="priority" value="low" required>
                         <label for="low">Low</label>
@@ -52,9 +52,9 @@
         </div>
         <div class="project-adder">
             <form class="project-form">
-                <label for="">Add project</label>
+                <label for="project-form-title">Add project</label>
                 <div class="input-row">
-                    <input type="text" id="project-form-title" maxlength="10" required>
+                    <input type="text" id="project-form-title" maxlength="15" required>
                     <button type="submit" id="project-add-btn">Add</button>
                 </div>
             </form>
@@ -63,17 +63,10 @@
             <div class="project" data-index="0">
                 <div class="project-title">Default</div>
                 <div class="todo-card-container">
-                    <div class="todo-card" data-index="0">
-                        <div class="todo-card-title">Card Title</div>
-                        <div class="todo-card-date">2005-06-2005</div>
-                        <div class="todo-description-title">Description</div>
-                        <div class="todo-description">Here is a description of something random. 
-                            Could be a long paragraph indeed. Who knows. I don't.</div>
-                        <i class="fa-solid fa-trash delete-Btn"></i>
-                    </div>
                     <div class="todo-card" data-index="1">
                         <div class="todo-card-title">Card Title 2nd</div>
                         <div class="todo-card-date">3005-06-2005</div>
+                        <div class="card-priority">Priority: low</div>
                         <div class="todo-description-title">Description</div>
                         <div class="todo-description">Here is a SECOND description of something random. 
                             Could be a long paragrapg indeed. Who knows. I don't.</div>
@@ -87,16 +80,9 @@
                     <div class="todo-card" data-index="0">
                         <div class="todo-card-title">Card Title</div>
                         <div class="todo-card-date">2005-06-2005</div>
+                        <div class="card-priority">Priority: high</div>
                         <div class="todo-description-title">Description</div>
                         <div class="todo-description">Here is a description of something random. 
-                            Could be a long paragrapg indeed. Who knows. I don't.</div>
-                        <i class="fa-solid fa-trash delete-Btn"></i>
-                    </div>
-                    <div class="todo-card" data-index="1">
-                        <div class="todo-card-title">Card Title 2nd</div>
-                        <div class="todo-card-date">3005-06-2005</div>
-                        <div class="todo-description-title">Description</div>
-                        <div class="todo-description">Here is a SECOND description of something random. 
                             Could be a long paragrapg indeed. Who knows. I don't.</div>
                         <i class="fa-solid fa-trash delete-Btn"></i>
                     </div>
