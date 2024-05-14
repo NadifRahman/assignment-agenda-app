@@ -67,3 +67,69 @@ function deleteProjectOption(dataindex) {
     console.log(optionToDelete);
     optionToDelete.remove();
 };
+
+export function createTodoInterface(todoObj, projectIndex, projectManager) {
+    projectManager.getProject(projectIndex).addTodo(todoObj); //add to the appropriate project
+
+    let todoCard = document.createElement("div");
+    todoCard.classList.add("todo-card");
+    todoCard.setAttribute("data-index", projectManager.getProject(projectIndex).getNumberOfTodos() - 1)
+
+    let cardTitle = document.createElement("div");
+    cardTitle.classList.add("todo-card-title");
+    cardTitle.textContent = todoObj.title;
+    
+    let cardDate = document.createElement("div");
+    cardDate.classList.add("todo-card-date");
+    cardDate.textContent = todoObj.dueDate;
+
+    let cardPriority = document.createElement("div");
+    cardPriority.classList.add("card-priority");
+    cardPriority.textContent = `Priority: ${todoObj.priority}`
+
+    let cardDescTitle = document.createElement("div");
+    cardDescTitle.classList.add("todo-description-title");
+    cardDescTitle.textContent = "Description";
+
+    let cardDesc = document.createElement("div");
+    cardDesc.classList.add("todo-description");
+    cardDesc.textContent = todoObj.description;
+
+    let deleteIcon = document.createElement("i");
+    deleteIcon.setAttribute('class', 'fa-solid fa-trash todo-delete');
+
+    deleteIcon.addEventListener('click', () => {
+        let project = todoCard.closest(".project") //get its project dom element
+        todoCard.remove(); //remove the card from the dom
+        console.log(project);
+        //delete the todo from the corresponding project object rep.
+        projectManager.getProject(Number(project.getAttribute("data-index"))).deleteTodo(Number(todoCard.getAttribute("data-index")));
+        updateTodoIndices(Number(project.getAttribute("data-index")));
+
+    })
+
+    let todoContainer = document.querySelector(`.project[data-index="${projectIndex}"] .todo-card-container`);
+
+    todoCard.appendChild(cardTitle);
+    todoCard.appendChild(cardDate);
+    todoCard.appendChild(cardPriority);
+    todoCard.appendChild(cardDescTitle);
+    todoCard.appendChild(cardDesc);
+    todoCard.appendChild(deleteIcon);
+    todoContainer.appendChild(todoCard);
+    
+}
+
+/**
+ * Updates the data-index attributes of todo-cards under a particular project dom element given its dataindex
+ * @param {*} projectIndex 
+ */
+function updateTodoIndices(projectIndex) {
+    
+    let todoCards = document.querySelectorAll(`.project[data-index="${projectIndex}"] .todo-card`);
+    let i = 0;
+    todoCards.forEach((card) => {
+        card.setAttribute("data-index", i);
+        i++;
+    })
+}

@@ -29,6 +29,9 @@ export default class Project {
      */
     getTodo(index){
         return this.todoList[index];
+    }
 
+    getNumberOfTodos() {
+        return this.todoList.length;
     }
 }
