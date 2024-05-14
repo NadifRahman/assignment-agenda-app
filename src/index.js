@@ -1,7 +1,13 @@
 import './style.css'
 import { createProjectInterface } from './userinterface'
-import Project from './project'
+import ProjectManager from './projectmanager';
+import Project from './project';
 
-let newProject = new Project("hey");
-createProjectInterface(newProject, 4);
-createProjectInterface(newProject, 10);
+let newProjectManager = new ProjectManager();
+let newProject = new Project("NO way")
+createProjectInterface(newProject, newProjectManager)
+createProjectInterface(newProject, newProjectManager)
+createProjectInterface(newProject, newProjectManager)
+createProjectInterface(newProject, newProjectManager)
+createProjectInterface(newProject, newProjectManager)
+console.log(newProjectManager);

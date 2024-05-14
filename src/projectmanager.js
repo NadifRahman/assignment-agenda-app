@@ -27,4 +27,8 @@ export default class ProjectManager {
     getProject(index) {
         return this.projectList[index];
     }
+
+    getNumberOfProjects() {
+        return this.projectList.length;
+    }
 }
