@@ -100,6 +100,10 @@ form button {
     font-weight: 600;
 }
 
+.fa-solid.fa-trash.project-delete {
+    margin-left: 0.5rem;
+}
+
 .todo-card-container {
     display: flex;
     align-items: center;
@@ -125,7 +129,7 @@ form button {
     gap: 0.1rem;
 }
 
-.fa-solid.fa-trash.delete-Btn {
+.fa-solid.fa-trash.todo-delete {
     margin-top: auto;
     align-self: flex-end;
     font-size: 1.1rem;
