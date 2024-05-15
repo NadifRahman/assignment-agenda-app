@@ -13,7 +13,6 @@ export function createProjectInterface(projectObj, projectManager) {
     project.setAttribute("data-index", projectManager.getNumberOfProjects() - 1);
     let projectTitle = document.createElement("div");
     projectTitle.classList.add("project-title");
-    console.log(projectObj.title);
     projectTitle.textContent = projectObj.title;
     let deleteIcon = document.createElement("i");
     deleteIcon.setAttribute('class', 'fa-solid fa-trash project-delete');
@@ -64,7 +63,6 @@ function createProjectOption(projectObj, dataindex) {
  */
 function deleteProjectOption(dataindex) {
     let optionToDelete = document.querySelector(`option[data-index="${dataindex}"]`);
-    console.log(optionToDelete);
     optionToDelete.remove();
 };
 
@@ -101,7 +99,6 @@ export function createTodoInterface(todoObj, projectIndex, projectManager) {
     deleteIcon.addEventListener('click', () => {
         let project = todoCard.closest(".project") //get its project dom element
         todoCard.remove(); //remove the card from the dom
-        console.log(project);
         //delete the todo from the corresponding project object rep.
         projectManager.getProject(Number(project.getAttribute("data-index"))).deleteTodo(Number(todoCard.getAttribute("data-index")));
         updateTodoIndices(Number(project.getAttribute("data-index")));
@@ -117,7 +114,6 @@ export function createTodoInterface(todoObj, projectIndex, projectManager) {
     todoCard.appendChild(cardDesc);
     todoCard.appendChild(deleteIcon);
     todoContainer.appendChild(todoCard);
-    
 }
 
 /**

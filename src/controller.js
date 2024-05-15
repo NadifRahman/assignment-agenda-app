@@ -19,8 +19,6 @@ export default class Controller {
 
             addProjectForm.addEventListener('submit', (event) => {
                 event.preventDefault();
-                console.log(projectTitleInput.value);
-
                 let newProject = new Project(projectTitleInput.value);
                 createProjectInterface(newProject, this.projectManager);
             })
@@ -41,8 +39,6 @@ export default class Controller {
                 let projectIndex = Number(document.querySelector("#projects option:checked").getAttribute("data-index"));
                 let todoPriorityRadioButton = document.querySelector(`input[type="radio"]:checked`);
                 let newTodo = new Todo(todoTitleInput.value, todoDescInput.value, todoDateInput.value.replace(/-/g,"/"), todoPriorityRadioButton.value);
-                console.log(newTodo);
-                console.log(projectIndex);
                 createTodoInterface(newTodo, projectIndex, this.projectManager)
             })
         }
