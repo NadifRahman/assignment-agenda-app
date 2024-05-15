@@ -16,7 +16,7 @@ module.exports = {
             template: './src/index.html'
         })
     ],
-    mode: 'development',
+    mode: 'production',
     
     devServer: {
         static: path.join(__dirname, 'dist'),
